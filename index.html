@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanshika Negi | Tech Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&family=Special+Elite&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --barbie-pink: #ff69b4;
+            --hot-pink: #e0218a;
+            --soft-pink: #fce4ec;
+            --typewriter: 'Special Elite', cursive;
+        }
+
+        /* --- THE PINK HEART CURSOR --- */
+        * {
+            cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' style='fill:hotpink'><path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/></svg>"), auto !important;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #ffdee9 100%);
+            color: #4a4a4a;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .cursive { font-family: 'Pacifico', cursive; }
+
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.1);
+        }
+
+        /* Marquee Styles */
+        .marquee-wrap {
+            background: var(--hot-pink); color: white;
+            overflow:hidden; white-space:nowrap; position:relative; z-index: 99;
+            border-bottom: 2px solid white;
+        }
+        .marquee-track {
+            display:inline-block; padding-left: 100%;
+            animation: marquee 22s linear infinite;
+            font-size: 0.8rem; padding: 8px 0; font-weight: 600;
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+
+        /* Floating Animation */
+        .float { animation: floating 3s ease-in-out infinite; }
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Pink Terminal */
+        .terminal-header { background: var(--hot-pink); border-top-left-radius: 12px; border-top-right-radius: 12px; }
+        .terminal-body {
+            background: #2d0015;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ff69b4;
+            min-height: 220px;
+        }
+
+        /* Buttons */
+        .btn-pink {
+            background: var(--hot-pink);
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(224, 33, 138, 0.4);
+        }
+        .btn-pink:hover { transform: scale(1.05); background: var(--barbie-pink); }
+
+        /* Project Cards 3D */
+        .project-card { transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .project-card:hover { transform: perspective(1000px) rotateY(5deg) translateY(-10px); }
+
+        .skill-tag {
+            background: white; border: 1px solid var(--barbie-pink);
+            padding: 4px 12px; border-radius: 99px; font-size: 10px; font-weight: 700; color: var(--hot-pink);
+        }
+    </style>
+</head>
+<body class="p-0">
+
+    <!-- Marquee -->
+    <div class="marquee-wrap">
+        <div class="marquee-track">
+            <span>✧ Vanshika Negi | Final Year Computer Engineering ✧</span>
+            <span>★ Cybersecurity Enthusiast ★</span>
+            <span>✧ Master's Aspirant (GATE 2025) ✧</span>
+            <span>★ Projects: MUED, Alert-Guard, BuildConnect, CyberBloom ★</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-12 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-4xl glass px-6 py-3 flex justify-between items-center">
+        <div class="cursive text-2xl text-hot-pink font-bold">Vanshika</div>
+        <div class="hidden md:flex gap-6 font-medium text-hot-pink text-sm uppercase tracking-widest">
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#projects" class="hover:underline">Work</a>
+            <a href="#certs" class="hover:underline">Certs</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+        </div>
+        <a href="https://drive.google.com/file/d/14OigPXFaT_xl3zCytWm9lFHWVygUH2RP/view?usp=drive_link" target="_blank" class="btn-pink px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">Resume <i class="fas fa-file-pdf"></i></a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="mt-48 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-8 gap-10">
+        <div data-aos="fade-right" class="md:w-1/2">
+            <h1 class="text-6xl font-bold text-hot-pink mb-4 leading-tight text-center md:text-left">Hello, I'm <br><span class="cursive text-7xl">Vanshika</span></h1>
+            <p class="text-lg leading-relaxed mb-6 font-medium text-center md:text-left text-gray-700">
+                Final Year B.Tech Computer Engineering student specializing in <b>Cloud Security</b> and <b>Business Intelligence.</b> I turn complex data into accessible tech solutions.
+            </p>
+            
+            <div class="flex flex-wrap justify-center md:justify-start gap-2 mb-8">
+                <span class="skill-tag">#PYTHON</span>
+                <span class="skill-tag">#AWS</span>
+                <span class="skill-tag">#SQL</span>
+                <span class="skill-tag">#POWERBI</span>
+                <span class="skill-tag">#NODEJS</span>
+                <span class="skill-tag">#GIT</span>
+            </div>
+
+            <div class="flex justify-center md:justify-start gap-4">
+                <a href="#projects" class="btn-pink px-8 py-3 rounded-2xl font-bold uppercase text-xs">The Boutique</a>
+                <div class="flex gap-4 items-center text-hot-pink text-2xl">
+                    <a href="https://github.com/vanshikanegiii285" target="_blank"><i class="fab fa-github hover:scale-110 transition"></i></a>
+                    <a href="https://www.linkedin.com/in/vanshikanegiii" target="_blank"><i class="fab fa-linkedin hover:scale-110 transition"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div data-aos="zoom-in" class="md:w-1/2 relative flex justify-center">
+            <div class="float glass p-4 border-8 border-white rounded-[3rem] overflow-hidden shadow-2xl w-72 h-72 flex items-center justify-center bg-white">
+                <!-- Tech Cat SVG Sticker -->
+                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" class="w-48 h-48">
+                    <path d="M448 96h-64V64c0-35.3-28.7-64-64-64H192c-35.3 0-64 28.7-64 64v32H64c-35.3 0-64 28.7-64 64v256c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V160c0-35.3-28.7-64-64-64zM176 64c0-8.8 7.2-16 16-16h128c8.8 0 16 7.2 16 16v32H176V64zm288 352c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V160c0-8.8 7.2-16 16-16h384c8.8 0 16 7.2 16 16v256z" fill="#ff69b4"/>
+                    <circle cx="256" cy="288" r="80" fill="#fce4ec"/>
+                    <path d="M256 240c-26.5 0-48 21.5-48 48s21.5 48 48 48 48-21.5 48-48-21.5-48-48-48z" fill="#e0218a"/>
+                </svg>
+            </div>
+            <i class="fas fa-heart absolute -top-5 -left-5 text-pink-400 text-4xl float" style="animation-delay: 1s;"></i>
+            <i class="fas fa-star absolute bottom-5 -right-5 text-yellow-300 text-4xl float"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="mt-32 max-w-6xl mx-auto grid md:grid-cols-2 gap-10 px-8">
+        <div data-aos="fade-up" class="glass p-8 border-l-8 border-hot-pink">
+            <h2 class="cursive text-4xl text-hot-pink mb-6">Profile</h2>
+            <p class="mb-4 text-sm font-medium">B.Tech Computer Engineering student at Pillai College of Engineering.</p>
+            <p class="text-sm leading-relaxed mb-6">I focus on the intersection of <b>Cybersecurity</b> and <b>Business Analytics</b>. Experienced in building automated serverless security pipelines and data-driven dashboards.</p>
+        </div>
+        
+        <div data-aos="fade-up" data-aos-delay="200" class="glass p-8">
+            <h2 class="cursive text-4xl text-hot-pink mb-6">Current Focus</h2>
+            <div class="space-y-3 text-sm">
+                <div class="flex items-center gap-3 bg-pink-100/50 p-3 rounded-xl">
+                    <i class="fas fa-palette text-hot-pink"></i> <span>Aesthetic Pinterest Board Maker</span>
+                </div>
+                <div class="flex items-center gap-3 bg-pink-100/50 p-3 rounded-xl">
+                    <i class="fas fa-laptop-house text-hot-pink"></i> <span>Business Website for Dad</span>
+                </div>
+                <div class="flex items-center gap-3 bg-pink-100/50 p-3 rounded-xl">
+                    <i class="fas fa-book-reader text-hot-pink"></i> <span>GATE 2025 Preparation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Boutique -->
+    <section id="projects" class="mt-32 max-w-6xl mx-auto px-8">
+        <h2 class="cursive text-5xl text-center text-hot-pink mb-16 italic">Project Boutique</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- MUED -->
+            <div data-aos="fade-up" class="project-card glass overflow-hidden flex flex-col border-b-8 border-hot-pink">
+                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-globe text-5xl text-blue-400"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase">MUED Portal</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">Collaborative web application built for a friend, focused on seamless portal navigation.</p>
+                    <a href="https://mued.netlify.app/" target="_blank" class="text-hot-pink font-bold text-[10px] underline uppercase tracking-widest">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- BuildConnect -->
+            <div data-aos="fade-up" data-aos-delay="100" class="project-card glass overflow-hidden flex flex-col border-b-8 border-hot-pink">
+                <div class="h-40 bg-pink-200 flex items-center justify-center">
+                    <i class="fas fa-handshake text-5xl text-white"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase">BuildConnect</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">B2B marketplace optimizing construction supply chains with Node.js & Firebase.</p>
+                    <a href="https://buildconnect-project.web.app" target="_blank" class="text-hot-pink font-bold text-[10px] underline uppercase tracking-widest">Live Demo</a>
+                </div>
+            </div>
+
+            <!-- Alert-Guard -->
+            <div data-aos="fade-up" data-aos-delay="200" class="project-card glass overflow-hidden flex flex-col border-b-8 border-hot-pink">
+                <div class="h-40 bg-gray-900 flex items-center justify-center">
+                    <i class="fas fa-shield-virus text-5xl text-hot-pink"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase">Alert-Guard</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">AWS Serverless engine monitoring account security activity in real-time.</p>
+                    <a href="https://github.com/vanshikanegiii285/ALERT-GUARD" target="_blank" class="text-hot-pink font-bold text-[10px] underline uppercase tracking-widest">Github Repo</a>
+                </div>
+            </div>
+
+            <!-- Zepto Analysis -->
+            <div data-aos="fade-up" class="project-card glass overflow-hidden flex flex-col border-b-8 border-hot-pink">
+                <div class="h-40 bg-gray-800 flex items-center justify-center">
+                    <i class="fas fa-chart-bar text-5xl text-hot-pink"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase">Zepto Insights</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">Power BI dashboard identifying revenue leakage and inventory distribution.</p>
+                    <span class="text-hot-pink font-bold text-[10px] uppercase">Business Intelligence</span>
+                </div>
+            </div>
+
+            <!-- CyberBloom -->
+            <div data-aos="fade-up" data-aos-delay="100" class="project-card glass overflow-hidden flex flex-col border-b-8 border-hot-pink">
+                <div class="h-40 bg-pink-100 flex items-center justify-center">
+                    <i class="fas fa-seedling text-5xl text-hot-pink"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase">CyberBloom</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">Web app with password strength checkers and aesthetic theme customizers.</p>
+                    <a href="https://vanshikanegiii285.github.io/cyberbloom" target="_blank" class="text-hot-pink font-bold text-[10px] underline uppercase tracking-widest">Live Demo</a>
+                </div>
+            </div>
+
+            <!-- Pinterest Maker -->
+            <div data-aos="fade-up" data-aos-delay="200" class="project-card glass overflow-hidden flex flex-col border-2 border-dashed border-hot-pink">
+                <div class="h-40 bg-pink-50 flex items-center justify-center">
+                    <i class="fab fa-pinterest text-5xl text-pink-300"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="font-bold text-lg mb-2 uppercase italic">Board Maker</h3>
+                    <p class="text-[11px] text-gray-600 mb-4 italic">Specialized aesthetic tool for creating visual Pinterest-style board layouts.</p>
+                    <span class="text-hot-pink font-bold text-[10px] uppercase tracking-widest">In Development 🎀</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terminal Section -->
+    <section id="terminal" class="mt-32 max-w-4xl mx-auto px-8">
+        <div data-aos="flip-up" class="w-full glass shadow-2xl overflow-hidden border-2 border-hot-pink">
+            <div class="terminal-header p-3 flex gap-2 items-center">
+                <div class="w-3 h-3 rounded-full bg-white"></div>
+                <div class="w-3 h-3 rounded-full bg-white opacity-50"></div>
+                <span class="text-white text-[10px] font-bold ml-4 uppercase tracking-widest">vanshika@dreamhouse-terminal</span>
+            </div>
+            <div class="terminal-body p-8 text-sm">
+                <p class="mb-2">$ run mued.netlify.app</p>
+                <p class="text-white mb-2 ml-4">> Connecting to Netlify edge... DONE</p>
+                <p class="text-white mb-4 ml-4">> Status: Live and Responsive.</p>
+                <p class="mb-2">$ run business-analysis-report</p>
+                <p class="text-white mb-2 ml-4">> Analyzing Zepto Inventory... 100%</p>
+                <p class="text-hot-pink mb-4 ml-4">> Recovery Target: ₹250K Revenue leakage detected.</p>
+                <div class="flex mt-8">
+                    <span class="mr-2 text-white font-bold">$</span>
+                    <span class="animate-pulse bg-hot-pink w-2 h-5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates -->
+    <section id="certs" class="mt-32 max-w-6xl mx-auto px-8">
+        <h2 class="cursive text-5xl text-center text-hot-pink mb-16 italic">Certifications</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center text-[10px] font-bold uppercase tracking-widest">
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>Cisco Cybersecurity</p></div>
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>Microsoft Power BI</p></div>
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>AWS Cloud Fundamentals</p></div>
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>IIT Bombay: MySQL</p></div>
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>Proov Analytics</p></div>
+            <div class="glass p-6 border-b-4 border-hot-pink"><i class="fas fa-award text-2xl text-hot-pink mb-2"></i><p>Machine Learning</p></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="mt-32 glass p-10 text-center max-w-6xl mx-auto border-b-8 border-hot-pink rounded-none rounded-t-[50px]">
+        <h2 class="cursive text-5xl text-hot-pink mb-8 italic">Let's Connect!</h2>
+        <div class="flex justify-center gap-10 text-3xl text-hot-pink mb-12">
+            <a href="https://www.linkedin.com/in/vanshikanegiii"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vanshikanegiii285"><i class="fab fa-github"></i></a>
+            <a href="mailto:negivanshikawork@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        
+        <div class="visitor-counter inline-flex items-center gap-4 bg-black text-hot-pink px-6 py-2 rounded-lg border-2 border-white shadow-xl mb-8">
+            <span class="text-[10px] uppercase tracking-widest font-bold">Total Visitors:</span>
+            <span id="visitorCount" class="text-xl font-bold">000001</span>
+        </div>
+
+        <p class="text-[10px] text-pink-400 font-bold uppercase mb-10">Handcrafted by Vanshika Negi • 2024</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+        // visitor counter logic
+        const counterEl = document.getElementById('visitorCount');
+        counterEl.textContent = String(48921 + Math.floor(Math.random()*100)).padStart(6,'0');
+    </script>
+</body>
+</html>
